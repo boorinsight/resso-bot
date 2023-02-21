@@ -49,7 +49,7 @@ el3 = driver.find_element(by=AppiumBy.XPATH, value="/hierarchy/android.widget.Fr
 #driver.implicitly_wait(10)
 time.sleep(5)
 try:
-    if el3.text == "genshinio3099k@nzcho.my.id":
+    if el3.text == "gugelgantengbanget@gmail.com":
         el3.click()
     else:
         pass
