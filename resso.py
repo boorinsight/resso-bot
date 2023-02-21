@@ -13,7 +13,7 @@ login_caps = {
     "deviceName": "device",
     #"udid": "emulator-5554",
     #"udid": "192.168.8.121:37757",
-    "udid": "RR8T704RCKK",
+    "udid": "J9AXGF00S840NWB",
     "noReset": False
 }
 
@@ -22,7 +22,7 @@ boot_caps = {
     "deviceName": "device",
     #"udid": "emulator-5554",
     #"udid": "192.168.8.121:37757",
-    "udid": "RR8T704RCKK",
+    "udid": "J9AXGF00S840NWB",
     "noReset": True
 }
 
@@ -44,12 +44,12 @@ el2.click()
 
 driver.implicitly_wait(10)
 #time.sleep(3)
-el3 = driver.find_element(by=AppiumBy.ID, value="com.google.android.gms:id/account_name")
+el3 = driver.find_element(by=AppiumBy.XPATH, value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.TextView[2]")
 
-driver.implicitly_wait(10)
-#time.sleep(5)
+#driver.implicitly_wait(10)
+time.sleep(5)
 try:
-    if el3.text == "alfianseptapratama@gmail.com":
+    if el3.text == "genshinio3099k@nzcho.my.id":
         el3.click()
     else:
         pass
@@ -57,17 +57,16 @@ except:
     pass
 
 try:
-    driver.implicitly_wait(10)
-    #time.sleep(3)
-    driver.swipe(540, 1277, 540, 1150, 400)
+    #driver.implicitly_wait(10)
+    time.sleep(3)
+    driver.swipe(540, 1142, 540, 998, 400)
 
-    driver.implicitly_wait(10)
-    #time.sleep(3)
+    #driver.implicitly_wait(10)
+    time.sleep(3)
     el4 = driver.find_element(by=AppiumBy.ID, value="com.moonvideo.android.resso:id/userAgeGateBtn")
     el4.click()
 except:
     pass
-
 driver.close_app()
 
 print("opening the songlist")
@@ -90,33 +89,16 @@ for i in song_title["title"]:
     el6 = driver.find_element(by=AppiumBy.XPATH, value=f"//android.widget.TextView[@text='{i}']")
     el6.click()
     time.sleep(5)
-    try:
-        el8 = driver.find_element(by=AppiumBy.XPATH, value="//android.view.View[@content-desc=\"Install\"]/android.widget.TextView")
-        el8.click()
-        time.sleep(3)
-        el9 = driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='More info']")
-        el9.click()
-    except:
-        pass
-    driver.swipe(540, 1277, 540, 1150, 400)
-    time.sleep(5)
-    driver.back()
+    # try:
+    #     el8 = driver.find_element(by=AppiumBy.XPATH, value="//android.view.View[@content-desc=\"Install\"]/android.widget.TextView")
+    #     el8.click()
+    #     time.sleep(3)
+    #     el9 = driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='More info']")
+    #     el9.click()
+    # except:
+    #     pass
+    # driver.swipe(540, 1277, 540, 1150, 400)
+    # time.sleep(5)
+    # driver.back()
 time.sleep(10)
 driver.close_app()
-# driver.implicitly_wait(10)
-# if el6.text == "Farewall":
-#     print("open.. ", el6.text)
-#     el6.click()
-# else:
-#     print("can't find the element")
-#     pass
-
-# try:
-#     #driver.implicitly_wait(15)
-#     time.sleep(10)
-#     actions.tap(None,985,139,1)
-#     actions.perform()
-
-# except:
-#     print("cant click")
-#     pass
